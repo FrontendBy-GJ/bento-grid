@@ -1,0 +1,42 @@
+@use '../abstracts//breakpoints' as *;
+
+.bento {
+  padding: 2rem 1rem;
+  display: grid;
+  gap: 2rem;
+  overflow: hidden;
+
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    'five-stars'
+    'platforms'
+    'calendar'
+    'schedule'
+    'grow'
+    'audience'
+    'create'
+    'ai';
+
+  // TABLET
+  @media only screen and (min-width: 678px) and (max-width: 1079px) {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      'five-stars five-stars five-stars five-stars'
+      'platforms platforms calendar  calendar'
+      'schedule  schedule  grow      grow'
+      'audience  audience  audience  audience'
+      'create    create    ai        ai';
+  }
+  // DESKTOP
+  @media only screen and (min-width: 1080px) and (max-width: 2560px) {
+    padding: 2rem 4rem;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      'create five-stars five-stars schedule'
+      'create five-stars five-stars schedule'
+      'create platforms calendar  schedule'
+      'ai     platforms calendar  schedule'
+      'ai     audience  grow      grow'
+      'ai     audience  grow      grow';
+  }
+}

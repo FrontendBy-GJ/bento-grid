@@ -1,0 +1,25 @@
+@use '../abstracts/' as *;
+
+body {
+  background-color: whitesmoke;
+  max-width: $desktop;
+  margin-inline: auto;
+  font-family: 'DMSans', sans-serif;
+  font-weight: 400;
+  p {
+    font-size: 1.13rem;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :focus-visible {
+    transition: outline-offset 75ms ease-out;
+  }
+  :not(:active):focus-visible {
+    transition-duration: 0.25s;
+  }
+}
+
+:not(:active):focus-visible {
+  outline-offset: 0.3rem;
+}
